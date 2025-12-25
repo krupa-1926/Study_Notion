@@ -39,6 +39,7 @@ function Catalog() {
 
 
     useEffect(() => {
+         if (!categoryId) return;
         if (categoryId) {
             ; (async () => {
                 setLoading(true)

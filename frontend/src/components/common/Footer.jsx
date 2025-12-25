@@ -178,10 +178,10 @@ const Footer = () => {
 
               <Link to='https://github.com/Aniruddha-Gade' target="__blank" className="text-white hover:underline mr-1"
               >
-                Aniruddha Gade
+                Krupa Patel
               </Link>
             </div>
-            <span> © 2023 Studynotion</span>
+            <span> © 2025 Studynotion</span>
           </div>
 
           <div className="flex items-center">

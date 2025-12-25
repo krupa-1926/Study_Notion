@@ -1,6 +1,12 @@
 const express = require('express')
 const app = express();
 
+app.use((req, res, next) => {
+  console.log("BACKEND HIT 👉", req.method, req.originalUrl);
+  next();
+});
+
+
 // packages
 const fileUpload = require('express-fileupload');
 const cookieParser = require('cookie-parser');
@@ -34,7 +40,6 @@ app.use(
         tempFileDir: '/tmp'
     })
 )
-
 
 const PORT = process.env.PORT || 5000;
 

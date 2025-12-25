@@ -1,4 +1,7 @@
 const Category = require('../models/category')
+const Course = require('../models/course')
+const mongoose = require("mongoose");
+
 
 // get Random Integer
 function getRandomInt(max) {
@@ -69,16 +72,39 @@ exports.showAllCategories = async (req, res) => {
 exports.getCategoryPageDetails = async (req, res) => {
     try {
         const { categoryId } = req.body
-        // console.log("PRINTING CATEGORY ID: ", categoryId);
+        console.log("PRINTING CATEGORY ID: ", categoryId);
 
-        // Get courses for the specified category
-        const selectedCategory = await Category.findById(categoryId)
-            .populate({
-                path: "courses",
-                match: { status: "Published" },
-                populate: "ratingAndReviews",
-            })
-            .exec()
+        if (!categoryId) {
+      return res.status(400).json({
+        success: false,
+        message: "Category ID is required",
+      });
+    }
+
+    //      if (!mongoose.Types.ObjectId.isValid(categoryId)) {
+    //   return res.status(400).json({
+    //     success: false,
+    //     message: "Invalid categoryId",
+    //   });
+    // }
+    //     // Get courses for the specified category
+    //     const selectedCategory = await Category.findById(categoryId)
+    //         .populate({
+    //             path: "courses",
+    //             match: { status: "Published" },
+    //             populate: "ratingAndReviews",
+    //         })
+    //         .exec()
+
+    //  const selectedCategory = await Category.findOne({
+    //   name: categoryName,
+    // })
+    //   .populate({
+    //     path: "courses",
+    //     match: { status: "Published" },
+    //   })
+    //   .exec();
+     const selectedCategory = await Category.findById(categoryId);
 
         // console.log('selectedCategory = ', selectedCategory)
         // Handle the case when the category is not found
@@ -148,3 +174,45 @@ exports.getCategoryPageDetails = async (req, res) => {
         })
     }
 }
+
+// exports.getCategoryPageDetails = async (req, res) => {
+//   try {
+//     const { categoryName } = req.body;
+
+//     const selectedCategory = await Category.findOne({ name: categoryName })
+//       .populate({
+//         path: "courses",
+//         match: { status: "Published" },
+//       });
+
+//     if (!selectedCategory) {
+//       return res.status(404).json({
+//         success: false,
+//         message: "Category not found",
+//       });
+//     }
+
+//     const differentCategories = await Category.find({
+//       _id: { $ne: selectedCategory._id },
+//     });
+
+//     const mostSellingCourses = await Course.find({ status: "Published" })
+//       .sort({ studentsEnrolled: -1 })
+//       .limit(10);
+
+//     return res.status(200).json({
+//       success: true,
+//       data: {
+//         selectedCategory,
+//         differentCategories,
+//         mostSellingCourses,
+//       },
+//     });
+//   } catch (error) {
+//     console.error("CATEGORY PAGE ERROR:", error);
+//     return res.status(500).json({
+//       success: false,
+//       message: error.message,
+//     });
+//   }
+// };

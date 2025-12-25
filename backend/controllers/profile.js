@@ -155,12 +155,19 @@ exports.getUserDetails = async (req, res) => {
 // ================ Update User profile Image ================
 exports.updateUserProfileImage = async (req, res) => {
     try {
-        const profileImage = req.files?.profileImage;
+        // const profileImage = req.files?.profileImage;
+            const profileImage = req.files?.displayPicture; 
         const userId = req.user.id;
 
         // validation
         // console.log('profileImage = ', profileImage)
 
+        if (!profileImage) {
+      return res.status(400).json({
+        success: false,
+        message: "Profile image is required",
+      });
+    }
         // upload imga eto cloudinary
         const image = await uploadImageToCloudinary(profileImage,
             process.env.FOLDER_NAME, 1000, 1000);
