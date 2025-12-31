@@ -148,7 +148,6 @@ Study_Notion/
 │
 ├── frontend/                    # Frontend (React)
 │   ├── public
-│   │
 │   ├── src/
 │   │   ├── assets/              # Images, icons
 │   │   ├── components/          # Reusable components
