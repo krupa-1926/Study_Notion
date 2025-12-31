@@ -39,19 +39,20 @@ A platform for instructors to showcase their expertise and connect with learners
 1. **Clone the Repository:**
 
    ```bash
-   git clone https://github.com/krupa-1926/AirBnb.git
+   git clone https://github.com/krupa-1926/Study_Notion.git
+   cd Study_Notion
 
    ```
 
 2. **Install dependencies:**
 
-   Navigate to client directory and install frontend dependencies using npm
+   Navigate to frontend directory and install frontend dependencies using npm
 
    ```
    npm install
    ```
 
-   Similary navigate to api folder and install backend dependencies
+   Similary navigate to backend directory and install backend dependencies
 
    ```
    npm install
@@ -59,40 +60,53 @@ A platform for instructors to showcase their expertise and connect with learners
 
 3. **ENV variables:**
 
-   - create .env file in the client folder and add these variables
+   - create .env file in the frontend folder and add these variables
 
-     #### VITE_BASE_URL= http://localhost:4000
+     #### VITE_APP_BASE_URL= http://localhost:4000
 
-     #### VITE_GOOGLE_CLIENT_ID= your google client id
+     #### VITE_APP_RAZORPAY_KEY=your razorpay key
 
-   - create .env file in the api folder and add these variables
+   - create .env file in the backend folder and add these variables
 
-     #### PORT= 4000
+     #### PORT=5000
 
-     #### DB_URL= your db url
+     #### DATABASE_URL=your db url
 
-     #### JWT_SECRET= your secret (string)
+     #### JWT_SECRET=your secret (string)
 
-     #### JWT_EXPIRY= 20d
+     #### JWT_EXPIRY=20d
 
-     #### COOKIE_TIME= 7
+     #### COOKIE_TIME=7
 
-     #### SESSION_SECRET= your secret session (string)
+     #### SESSION_SECRET=your secret session (string)
 
-     #### CLOUDINARY_CLOUD_NAME= your secret session
+     #### CLOUD_NAME=your cloudinary cloud name
 
-     #### CLOUDINARY_API_KEY= your cloudinary key
+     #### API_KEY=your cloudinary key
 
-     #### CLOUDINARY_API_SECRET= your cloudinary api secret
+     #### API_SECRET=your cloudinary api secret
 
-     #### CLIENT_URL= http://localhost:5173
+     #### RAZORPAY_KEY=your razorpay api 
+
+     #### RAZORPAY_SECRET=your razorpay secret
+
+     #### BREVO_API_KEY=your brevo api 
+
+     #### BREVO_SMTP_HOST=your brevo SMTP hostname
+
+     #### BREVO_SMTP_PORT=your brevo port
+
+     #### BREVO_SMTP_USER=your brevo SMTP username
+
+     #### BREVO_SMTP_PASS=your brevo SMTP password
+
 
 4. **Run project:**
-   - Open terminal, navigate to client directory and run below command to start frontend
+   - Open terminal, navigate to frontend directory and run below command to start frontend
    ```
        npm run dev
    ```
-   - Open another terminal, navigate to api directory and run this command to start backend server
+   - Open another terminal, navigate to backend directory and run this command to start backend server
    ```
        npm start
    ```
@@ -116,9 +130,9 @@ A platform for instructors to showcase their expertise and connect with learners
 ## Folder Structure
 
 ```plaintext
-AirBnb/
+Study_Notion/
 │
-├── api/                         # Backend (Node.js + Express)
+├── backend/                     # Backend (Node.js + Express)
 │   ├── config/                  # DB config, Cloudinary, etc.
 │   ├── controllers/             # API controllers (Auth, Place, Booking)
 │   ├── middleware/              # Auth, error handlers
@@ -126,13 +140,13 @@ AirBnb/
 │   ├── routes/                  # Express routes
 │   ├── utils/                   # Helper functions
 │   │
-│   ├── index.js                 # Backend entry point
+│   ├── server.js                # Backend entry point
 │   ├── package.json
 │   ├── package-lock.json
 │   ├── .env                     # Environment variables (ignored)
 │   
 │
-├── client/                      # Frontend (React)
+├── frontend/                    # Frontend (React)
 │   ├── public
 │   │
 │   ├── src/
