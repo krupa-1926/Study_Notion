@@ -12,8 +12,8 @@
 A seamless and interactive learning experience for students, making education more accessible and engaging.
 A platform for instructors to showcase their expertise and connect with learners across the globe.
 
-🔗 **Live Demo**: [Frontend Link](https://airbnbfrontend-five.vercel.app)  
-🔗 **Backend API**: [Backend Link](https://airbnb-backend-qf96.onrender.com)  
+🔗 **Live Demo**: [Frontend Link](https://studynotionfrontend-seven.vercel.app)  
+🔗 **Backend API**: [Backend Link](https://study-notion-sptp.onrender.com)  
 
 ---
 
@@ -22,14 +22,15 @@ A platform for instructors to showcase their expertise and connect with learners
 
 | Section                 | Description                                  |
 |-------------------------|----------------------------------------------|
-| [StudyNotion Aim](#studynotion-aim-)        |  Overview of StudyNotion's goals            |
+| [Getting Started](#getting-started)        |  Overview of StudyNotion project           |
 | [Tech Stack](#tech-stack-)             | Technologies used in the project         |
-| [System Architecture](#system-architecture-)    |  Overview of the system architecture      |
-| [Architecture Diagram](#architecture-diagram-)   |  Diagram illustrating the architecture   |
-| [Schema](#schema-)                  |  Explanation of data schemas used          |
-| [React Hooks](#react-hooks-)            |  Overview of React Hooks utilized          |
-| [React Library](#react-library-)         |  Overview of React Libraries used        |
-| [Screen Preview](#screen-preview-)         |  Screen Preview        |
+| [Folder Structure](#folder-structure)    |  Overview of the folder structure      |
+| [Architecture Diagram](#architecture-diagram)   |  Diagram illustrating the architecture   |
+| [Schema](#schema)                  |  Explanation of data schemas used          |
+| [React Library](#react-library)         |  Overview of React Libraries used        |
+| [Screenshots](#screenshots)         |  Screen Preview        |
+| [Deployment](#deployment)         |  Deployment steps        |
+| [Author](#author)         |  Author Details        |
 
 ---
 
@@ -157,7 +158,7 @@ AirBnb/
 ```
 ---
 
-## Architecture Diagram 🏗️
+## Architecture Diagram
 
 Here is a high-level diagram that illustrates the architecture of the StudyNotion ed-tech platform:
 <img width='60%' src='./screenshots/Architecture Diagram.png' />
@@ -217,7 +218,7 @@ The back-end of the platform is built using NodeJS and ExpressJS, providing APIs
 
 --- 
 
-## Screenshots :
+## Screenshots 
 
 # Random Home Page Background 
 <img width='100%' src='./screenshots/home1.png' />
