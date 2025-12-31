@@ -66,6 +66,15 @@ export default function MobileProfileDropDown() {
         fetchSublinks();
     }, [])
 
+    useEffect(() => {
+  const closeMenu = () => setOpen(false);
+  window.addEventListener("closeMobileMenu", closeMenu);
+
+  return () => {
+    window.removeEventListener("closeMobileMenu", closeMenu);
+  };
+}, []);
+
 
     return (
 

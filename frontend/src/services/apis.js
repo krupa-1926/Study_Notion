@@ -1,5 +1,5 @@
-const BASE_URL_LINK= import.meta.env.VITE_APP_BASE_URL;
-const BASE_URL = `${BASE_URL_LINK}/api/v1`
+
+const BASE_URL = `https://study-notion-sptp.onrender.com/api/v1`
 
 // AUTH ENDPOINTS
 export const endpoints = {

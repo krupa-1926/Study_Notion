@@ -460,4 +460,65 @@ exports.deleteCourse = async (req, res) => {
 
 
 
+exports.getCatalogPageData = async (req, res) => {
+  try {
+    const { categoryId } = req.body;
+
+    if (!categoryId) {
+      return res.status(400).json({
+        success: false,
+        message: "Category ID is required",
+      });
+    }
+
+    // 1. Get selected category & its courses
+    const selectedCategory = await Category.findById(categoryId)
+      .populate({
+        path: "courses",
+        match: { status: "Published" },
+        populate: [
+          { path: "instructor", select: "firstName lastName image" },
+          { path: "ratingAndReviews" },
+        ],
+      });
+
+    if (!selectedCategory) {
+      return res.status(404).json({
+        success: false,
+        message: "Category not found",
+      });
+    }
+
+    // 2. Another random category for recommendations
+    const differentCategory = await Category.findOne({
+      _id: { $ne: categoryId },
+    })
+      .populate({
+        path: "courses",
+        match: { status: "Published" },
+      });
+
+    // 3. Most selling (by number of enrolled students)
+    const mostSellingCourses = await Course.find({
+      status: "Published",
+    })
+      .sort({ studentsEnrolled: -1 })
+      .limit(10)
+      .populate("instructor", "firstName lastName image");
+
+    return res.status(200).json({
+      success: true,
+      data: {
+        selectedCategory,
+        differentCategory,
+        mostSellingCourses,
+      },
+    });
+  } catch (error) {
+    return res.status(500).json({
+      success: false,
+      message: error.message,
+    });
+  }
+};
 

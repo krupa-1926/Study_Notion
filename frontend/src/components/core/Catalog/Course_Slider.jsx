@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react"
 
-
 // Import Swiper styles
 import "swiper/css"
 import "swiper/css/free-mode"
@@ -20,18 +19,33 @@ function Course_Slider({ Courses }) {
         <Swiper
           slidesPerView={1}
           spaceBetween={25}
-          loop={true}
+          // loop={true}
+          loop={Courses.length > 3}
+
           // modules={[ Pagination]}
 
+          // breakpoints={{
+          //   1024: {
+          //     slidesPerView: 3,
+          //   },
+          // }}
+          // className="max-h-[30rem] pt-8 px-2"
           breakpoints={{
-            1024: {
-              slidesPerView: 3,
-            },
-          }}
-          className="max-h-[30rem] pt-8 px-2"
+    640: {
+      slidesPerView: 1,
+    },
+    768: {
+      slidesPerView: 2,
+    },
+    1024: {
+      slidesPerView: 3,
+    },
+  }}
+          className="pt-8 px-2 w-full"
+
         >
           {Courses?.map((course, i) => (
-            <SwiperSlide key={i}>
+            <SwiperSlide key={i} className="h-auto">
               <Course_Card course={course} Height={"h-[250px]"} />
             </SwiperSlide>
           ))}

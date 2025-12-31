@@ -11,9 +11,6 @@ import Loading from './../components/common/Loading';
 import { getCatalogPageData } from '../services/operations/pageAndComponentData'
 import { fetchCourseCategories } from './../services/operations/courseDetailsAPI';
 
-
-
-
 function Catalog() {
 
     const { catalogName } = useParams()
@@ -124,7 +121,7 @@ function Catalog() {
             </div>
 
             {/* Section 2 */}
-            <div className=" mx-auto box-content w-full max-w-maxContentTab px-4 py-12 lg:max-w-maxContent">
+            {/* <div className=" mx-auto box-content w-full max-w-maxContentTab px-4 py-12 lg:max-w-maxContent">
                 <div className="section_heading">
                     Top courses in {catalogPageData?.differentCategory?.name}
                 </div>
@@ -133,10 +130,10 @@ function Catalog() {
                         Courses={catalogPageData?.differentCategory?.courses}
                     />
                 </div>
-            </div>
+            </div> */}
 
             {/* Section 3 */}
-            <div className=" mx-auto box-content w-full max-w-maxContentTab px-4 py-12 lg:max-w-maxContent">
+            {/* <div className=" mx-auto box-content w-full max-w-maxContentTab px-4 py-12 lg:max-w-maxContent">
                 <div className="section_heading">Frequently Bought</div>
                 <div className="py-8">
                     <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
@@ -147,7 +144,7 @@ function Catalog() {
                             ))}
                     </div>
                 </div>
-            </div>
+            </div> */}
 
             <Footer />
         </>

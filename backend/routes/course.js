@@ -12,7 +12,7 @@ const {
     editCourse,
     deleteCourse,
     getInstructorCourses,
-
+getCatalogPageData
 } = require('../controllers/course')
 
 const { updateCourseProgress } = require('../controllers/courseProgress')
@@ -115,5 +115,6 @@ router.post('/createRating', auth, isStudent, createRating);
 router.get('/getAverageRating', getAverageRating);
 router.get('/getReviews', getAllRatingReview);
 
+router.post("/getCatalogPageData", getCatalogPageData);
 
 module.exports = router;

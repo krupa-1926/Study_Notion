@@ -176,9 +176,9 @@ const Footer = () => {
             <div className="flex ">
               <span> Made with ❤️</span>
 
-              <Link to='https://github.com/Aniruddha-Gade' target="__blank" className="text-white hover:underline mr-1"
+              <Link to='https://github.com/krupa-1926' target="__blank" className="text-white hover:underline mr-1"
               >
-                Krupa Patel
+                By Krupa Patel
               </Link>
             </div>
             <span> © 2025 Studynotion</span>

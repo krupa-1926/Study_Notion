@@ -216,7 +216,7 @@ const Home = () => {
                     </div>
 
                     {/* course slider */}
-                    <div className='mx-auto box-content w-full max-w-maxContentTab px- py-12 lg:max-w-maxContent'>
+                    {/* <div className='mx-auto box-content w-full max-w-maxContentTab px- py-12 lg:max-w-maxContent'>
                         <h2 className='text-white mb-6 text-2xl '>
                             Popular Picks for You 🏆
                         </h2>
@@ -227,7 +227,7 @@ const Home = () => {
                             Top Enrollments Today 🔥
                         </h2>
                         <Course_Slider Courses={CatalogPageData?.mostSellingCourses} />
-                    </div>
+                    </div> */}
 
 
                     <ExploreMore />

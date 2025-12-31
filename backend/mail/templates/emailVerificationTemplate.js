@@ -1,7 +1,7 @@
 const { eventNames } = require("../../models/section");
 
 const otpTemplate = (otp, name) => {
-	return `<!DOCTYPE html>
+  return `<!DOCTYPE html>
 	<html>
 	
 	<head>
@@ -68,8 +68,7 @@ const otpTemplate = (otp, name) => {
 	
 	<body>
 		<div class="container">
-			<a href=""><img class="logo"
-					src="https://i.ibb.co/7Xyj3PC/logo.png" alt="StudyNotion Logo"></a>
+			
 			<div class="message">OTP Verification Email</div>
 			<div class="body">
 				<p>Dear ${name}</p>
@@ -79,8 +78,8 @@ const otpTemplate = (otp, name) => {
 				<p>This OTP is valid for 3 minutes. If you did not request this verification, please disregard this email.
 				Once your account is verified, you will have access to our platform and its features.</p>
 			</div>
-			<div class="support">If you have any questions or need assistance, please feel free to reach out to us at <a
-					href="mailto:gadeaniruddha2@gmail.com">gadeaniruddha2@gmail.com</a>. We are here to help!</div>
+			<div class="support">If you have any questions or need assistance, please feel free to reach out to us at  
+			<a href="mailto:krupapatel1926@gmail.com">krupapatel1926@gmail.com</a>. We are here to help!</div>
 		</div>
 	</body>
 	
